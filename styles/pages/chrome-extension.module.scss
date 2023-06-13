@@ -1,0 +1,18 @@
+@import '../globals/breakpoints';
+@import '../globals/colors';
+@import '../globals/typography';
+
+.container {
+  width: 100%;
+  height: 925px;
+  background: $body-bg-color;
+
+  .contentWrapper {
+    width: 1120px;
+    margin: 0 auto;
+    padding: 64px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
