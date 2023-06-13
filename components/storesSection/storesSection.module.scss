@@ -1,0 +1,80 @@
+@import '../../styles/globals/breakpoints';
+@import '../../styles/globals/colors';
+@import '../../styles/globals/typography';
+
+.container {
+  width: 100%;
+  height: 144px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $stores-section-bg-color;
+
+  .contentWrapper {
+    width: 1120px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+
+    .box {
+      width: 312px;
+      height: 80px;
+      border: 1px solid #1f343e;
+      border-radius: 16px;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      &:first-child {
+        margin-right: 16px;
+      }
+
+      .textContainer {
+        margin-left: 20px;
+
+        .subtitle {
+          font-family: var(--notoSans-font);
+          font-size: $stores-section-subtitle-font-size;
+          font-weight: $stores-section-subtitle-font-weight;
+          line-height: $stores-section-subtitle-line-height;
+          color: $stores-text-color;
+          margin-bottom: 8px;
+        }
+
+        .title {
+          font-family: var(--notoSans-font);
+          font-size: $stores-section-title-font-size;
+          font-weight: $stores-section-title-font-weight;
+          line-height: $stores-section-title-line-height;
+          color: $stores-text-color;
+        }
+      }
+    }
+
+    .reviewsBox {
+      display: flex;
+      align-items: center;
+      margin-left: 32px;
+
+      .star {
+        color: $white;
+        width: 21px;
+        height: 20px;
+        font-size: 21px;
+        margin-right: 4px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      .starsText {
+        color: $white;
+        font-family: var(--notoSans-font);
+        font-size: $stores-section-stars-text-font-size;
+        font-weight: $stores-section-stars-text-font-weight;
+        line-height: $stores-section-stars-text-line-height;
+        margin-left: 16px;
+      }
+    }
+  }
+}
