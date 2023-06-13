@@ -1,0 +1,73 @@
+@import '../../styles/globals/breakpoints';
+@import '../../styles/globals/colors';
+@import '../../styles/globals/typography';
+
+.card {
+  width: 544px;
+  height: 797px;
+  background: $form-bg-color;
+  border: 1px solid #1f343e;
+  border-radius: 16px;
+  opacity: 1;
+  padding: 64px;
+
+  .title {
+    font-family: var(--caveatBrush-font);
+    font-size: $form-title-font-size;
+    font-weight: $form-title-font-weight;
+    line-height: $form-title-line-height;
+    color: $main-text-color;
+    text-transform: uppercase;
+  }
+
+  .textContainer {
+    margin-bottom: 64px;
+    p {
+      text-align: left;
+      font-family: var(--notoSans-font);
+      font-size: $form-text-font-size;
+      font-weight: $form-text-font-weight;
+      line-height: $form-text-line-height;
+    }
+  }
+
+  .inputContainer {
+    margin-bottom: 16px;
+    input {
+      width: 416px;
+      height: 64px;
+      border-radius: 8px;
+      border: 1px solid #1f343e;
+      opacity: 1;
+      &::placeholder {
+        color: $lightGrey;
+        font-family: var(--notoSans-font);
+        font-size: $form-input-placeholder-font-size;
+        font-weight: $form-input-placeholder-font-weight;
+        line-height: $form-input-placeholder-line-height;
+      }
+    }
+  }
+
+  .button {
+    width: 416px;
+    height: 64px;
+    background: $blue;
+    border-radius: 8px;
+    border: 1px solid #1f343e;
+    color: $white;
+    font-family: var(--notoSans-font);
+    font-size: $form-submit-button-text-font-size;
+    font-weight: $form-submit-button-text-font-weight;
+    line-height: $form-submit-button-text-line-height;
+    margin-bottom: 153px;
+  }
+
+  .footer {
+    color: $lightGrey;
+    font-family: var(--notoSans-font);
+    font-size: $form-footer-text-font-size;
+    font-weight: $form-footer-text-font-weight;
+    line-height: $form-footer-text-line-height;
+  }
+}
