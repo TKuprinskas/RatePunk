@@ -1,0 +1,133 @@
+@import '../../styles/globals/breakpoints';
+@import '../../styles/globals/colors';
+@import '../../styles/globals/typography';
+
+.navbar {
+  background-color: $navbar-bg-color;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1120px;
+    margin: 0 auto;
+    height: 80px;
+    width: 100%;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    height: 32px;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  .menuToggle {
+    display: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+
+    img {
+      height: 24px;
+    }
+  }
+
+  .menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    .active {
+      a {
+        color: $blue;
+        font-family: var(--notoSans-font);
+        font-size: $navbar-menu-item-font-size;
+        font-weight: $navbar-menu-item-font-weight;
+        line-height: $navbar-menu-item-line-height;
+        text-decoration: none;
+      }
+    }
+
+    li {
+      margin-left: 20px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      a {
+        color: $navbar-menu-item-text-color;
+        font-family: var(--notoSans-font);
+        font-size: $navbar-menu-item-font-size;
+        font-weight: $navbar-menu-item-font-weight;
+        line-height: $navbar-menu-item-line-height;
+        text-decoration: none;
+        padding: 11px 16px;
+      }
+    }
+  }
+
+  @include respond-to(md) {
+    .container {
+      height: 56px;
+      width: 100%;
+      padding: 0 16px;
+    }
+
+    .menuToggle {
+      display: block;
+    }
+
+    .menu {
+      display: none;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      position: absolute;
+      top: 80px;
+      left: 0;
+      right: 0;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 0;
+      width: 100%;
+      transition: all 0.3s ease;
+
+      li {
+        margin: 0;
+        margin-bottom: 10px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        a {
+          color: #333;
+          text-decoration: none;
+          font-size: 16px;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    .menu.open {
+      display: flex;
+    }
+  }
+}
