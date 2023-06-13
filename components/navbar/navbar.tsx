@@ -4,7 +4,13 @@ import { useRouter } from 'next/router';
 import styles from './navbar.module.scss';
 import Image from 'next/image';
 
-export default function Navbar() {
+const menuItems = [
+  { name: 'Chrome Extension', href: '/chrome-extension' },
+  { name: 'Price Comparison', href: '/price-comparison' },
+  { name: 'Blog', href: '/blog' },
+];
+
+const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const router = useRouter();
 
@@ -24,29 +30,21 @@ export default function Navbar() {
           <Image src='/assets/menu.svg' alt='Menu' width={40} height={40} />
         </button>
         <ul className={`${styles.menu} ${isMenuOpen ? styles.open : ''}`}>
-          <li
-            className={
-              router.pathname === '/chrome-extension' ? styles.active : ''
-            }>
-            <Link href='/chrome-extension' legacyBehavior>
-              <a>Chrome Extension</a>
-            </Link>
-          </li>
-          <li
-            className={
-              router.pathname === '/price-comparison' ? styles.active : ''
-            }>
-            <Link href='/price-comparison' legacyBehavior>
-              <a>Price Comparison</a>
-            </Link>
-          </li>
-          <li className={router.pathname === '/blog' ? styles.active : ''}>
-            <Link href='/blog' legacyBehavior>
-              <a>Blog</a>
-            </Link>
-          </li>
+          {menuItems.map((item, index) => (
+            <li
+              key={index}
+              className={
+                router.pathname === item.href ? styles.active : undefined
+              }>
+              <Link href={item.href} legacyBehavior>
+                <a>{item.name}</a>
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>
   );
-}
+};
+
+export default Navbar;
