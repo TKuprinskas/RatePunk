@@ -1,0 +1,56 @@
+@import '../../styles/globals/breakpoints';
+@import '../../styles/globals/colors';
+@import '../../styles/globals/typography';
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 448px;
+  height: 669px;
+  align-items: center;
+  justify-content: center;
+
+  .box {
+    display: flex;
+    width: 100%;
+    height: 159px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 64px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .textContainer {
+      width: 256px;
+
+      .step {
+        font-family: var(--notoSans-font);
+        font-size: $steps-section-step-font-size;
+        font-weight: $steps-section-step-font-weight;
+        line-height: $steps-section-step-line-height;
+        color: $blue;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      }
+
+      .title {
+        font-family: var(--caveatBrush-font);
+        font-size: $steps-section-title-font-size;
+        font-weight: $steps-section-title-font-weight;
+        line-height: $steps-section-title-line-height;
+        color: $main-text-color;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      }
+
+      .text {
+        font-family: var(--notoSans-font);
+        font-size: $steps-section-text-font-size;
+        font-weight: $steps-section-text-font-weight;
+        line-height: $steps-section-text-line-height;
+        color: $main-text-color;
+      }
+    }
+  }
+}
