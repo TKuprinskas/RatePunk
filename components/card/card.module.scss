@@ -1,0 +1,29 @@
+@import '../../styles/globals/breakpoints';
+@import '../../styles/globals/colors';
+@import '../../styles/globals/typography';
+
+.card {
+  width: 544px;
+  margin-right: 128px;
+
+  .logoContainer {
+    margin-bottom: 32px;
+  }
+
+  .title {
+    margin-bottom: 46px;
+    color: $main-text-color;
+    font-family: var(--notoSans-font);
+    font-size: $card-title-font-size;
+    font-weight: $card-title-font-weight;
+    line-height: $card-title-line-height;
+  }
+
+  .text {
+    color: $lightGrey;
+    font-family: var(--notoSans-font);
+    font-size: $card-text-font-size;
+    font-weight: $card-text-font-weight;
+    line-height: $card-text-line-height;
+  }
+}

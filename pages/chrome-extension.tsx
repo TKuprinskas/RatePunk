@@ -4,6 +4,7 @@ import EmailFrom from '@/components/emailForm/emailForm';
 import styles from '@/styles/pages/chrome-extension.module.scss';
 import StepsSection from '@/components/stepsSection/stepsSection';
 import StoresSection from '@/components/storesSection/storesSection';
+import Footer from '@/components/footer/footer';
 
 const ChromeExtension = () => {
   return (
@@ -22,6 +23,7 @@ const ChromeExtension = () => {
         </div>
       </div>
       <StoresSection />
+      <Footer />
     </>
   );
 };

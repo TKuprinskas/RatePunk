@@ -23,7 +23,7 @@ export default function App({ Component, pageProps }: AppProps) {
           --caveatBrush-font: ${caveatBrush.style.fontFamily};
         }
       `}</style>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </>
   );
 }
