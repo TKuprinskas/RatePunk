@@ -109,6 +109,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        <div className={styles.copyright}>
+          © 2021 Ratepunk. All Rights Reserved.
+        </div>
       </div>
     </div>
   );

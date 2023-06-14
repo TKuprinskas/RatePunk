@@ -26,4 +26,18 @@
     font-weight: $card-text-font-weight;
     line-height: $card-text-line-height;
   }
+
+  @include respond-to(md) {
+    .text {
+      display: none;
+    }
+  }
+}
+
+@include respond-to(md) {
+  .card {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 48px;
+  }
 }

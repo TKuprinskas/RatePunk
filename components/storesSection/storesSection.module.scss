@@ -77,4 +77,46 @@
       }
     }
   }
+
+  @include respond-to(md) {
+    .contentWrapper {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+
+      .box:first-child {
+        margin-right: 0;
+        margin-bottom: 16px;
+      }
+
+      .reviewsBox {
+        margin-left: 0;
+        margin-top: 24px;
+
+        .star {
+          color: $white;
+          width: 21px;
+          height: 16px;
+          font-size: 16px;
+          margin-right: 4px;
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+
+        .starsText {
+          font-size: $stores-section-stars-text-mobile-font-size;
+          font-weight: $stores-section-stars-text-mobile-font-weight;
+          line-height: $stores-section-stars-text-mobile-line-height;
+        }
+      }
+    }
+  }
+}
+
+@include respond-to(md) {
+  .container {
+    height: 100%;
+    min-height: 286px;
+  }
 }
