@@ -17,24 +17,24 @@ interface Link {
 
 const socials: Social[] = [
   {
-    name: 'facebook',
-    src: '/assets/fb.svg',
+    name: 'instagram',
+    src: '/assets/instagram.svg',
   },
   {
-    name: 'instagram',
-    src: '/assets/fb.svg',
+    name: 'facebook',
+    src: '/assets/facebook.svg',
   },
   {
     name: 'linkedin',
-    src: '/assets/fb.svg',
+    src: '/assets/linkedin.svg',
   },
   {
     name: 'twitter',
-    src: '/assets/fb.svg',
+    src: '/assets/twitter.svg',
   },
   {
-    name: 'youtube',
-    src: '/assets/fb.svg',
+    name: 'tiktok',
+    src: '/assets/tiktok.svg',
   },
 ];
 
@@ -107,13 +107,15 @@ const Footer: React.FC = () => {
               <div className={styles.title}>Social Icons</div>
               <div className={styles.iconsWrapper}>
                 {socials.map((social: Social) => (
-                  <Image
-                    key={social.name}
-                    src={social.src}
-                    alt={`${social.name} icon`}
-                    width={32}
-                    height={32}
-                  />
+                  <div className={styles.iconBox} key={social.name}>
+                    <Image
+                      key={social.name}
+                      src={social.src}
+                      alt={`${social.name} icon`}
+                      width={16}
+                      height={16}
+                    />
+                  </div>
                 ))}
               </div>
             </div>
