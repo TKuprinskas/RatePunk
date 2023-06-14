@@ -4,13 +4,18 @@ import { useRouter } from 'next/router';
 import styles from './navbar.module.scss';
 import Image from 'next/image';
 
-const menuItems = [
+interface MenuItem {
+  name: string;
+  href: string;
+}
+
+const menuItems: MenuItem[] = [
   { name: 'Chrome Extension', href: '/chrome-extension' },
   { name: 'Price Comparison', href: '/price-comparison' },
   { name: 'Blog', href: '/blog' },
 ];
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const router = useRouter();
 
@@ -34,7 +39,7 @@ const Navbar = () => {
           )}
         </button>
         <ul className={`${styles.menu} ${isMenuOpen ? styles.open : ''}`}>
-          {menuItems.map((item, index) => (
+          {menuItems.map((item: MenuItem, index: number) => (
             <li
               key={index}
               className={

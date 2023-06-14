@@ -2,7 +2,14 @@ import React, { useState, useEffect } from 'react';
 import styles from './stepsSection.module.scss';
 import Image from 'next/image';
 
-const steps = [
+interface Step {
+  step: string;
+  title: string;
+  text: string;
+  image: string;
+}
+
+const steps: Step[] = [
   {
     step: 'Step 1',
     title: 'Invite Friends',
@@ -23,8 +30,8 @@ const steps = [
   },
 ];
 
-const StepsSection = () => {
-  const [isMobile, setIsMobile] = useState(false);
+const StepsSection: React.FC = () => {
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
   useEffect(() => {
     if (typeof window !== 'undefined' && window.innerWidth < 768) {
@@ -34,7 +41,7 @@ const StepsSection = () => {
 
   return (
     <div className={styles.card}>
-      {steps.map((step, index) => (
+      {steps.map((step: Step, index: number) => (
         <div className={styles.box} key={index}>
           {!isMobile && index % 2 === 0 ? (
             <Image

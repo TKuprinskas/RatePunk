@@ -5,7 +5,17 @@ import Card from '../card/card';
 import styles from './footer.module.scss';
 import Link from 'next/link';
 
-const socials = [
+interface Social {
+  name: string;
+  src: string;
+}
+
+interface Link {
+  name: string;
+  href: string;
+}
+
+const socials: Social[] = [
   {
     name: 'facebook',
     src: '/assets/fb.svg',
@@ -28,7 +38,7 @@ const socials = [
   },
 ];
 
-const links = [
+const links: Link[] = [
   {
     name: 'Price Comparison',
     href: '/price-comparison',
@@ -51,7 +61,7 @@ const links = [
   },
 ];
 
-const Footer = () => {
+const Footer: React.FC = () => {
   const router = useRouter();
 
   return (
@@ -68,7 +78,7 @@ const Footer = () => {
           <div className={styles.quickLinks}>
             <div className={styles.title}>Quick Links</div>
             <ul className={styles.linksWrapper}>
-              {links.map((link, index) => (
+              {links.map((link: Link, index: number) => (
                 <Link
                   href={link.href}
                   key={index}
@@ -96,7 +106,7 @@ const Footer = () => {
             <div className={styles.socialIcons}>
               <div className={styles.title}>Social Icons</div>
               <div className={styles.iconsWrapper}>
-                {socials.map((social) => (
+                {socials.map((social: Social) => (
                   <Image
                     key={social.name}
                     src={social.src}
