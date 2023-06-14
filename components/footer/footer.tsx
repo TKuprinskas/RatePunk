@@ -53,7 +53,6 @@ const links = [
 
 const Footer = () => {
   const router = useRouter();
-  console.log(router.pathname);
 
   return (
     <div className={styles.container}>
