@@ -53,4 +53,43 @@
       }
     }
   }
+
+  @include respond-to(md) {
+    .box {
+      flex-direction: column;
+      height: 100%;
+      margin-bottom: 48px;
+
+      .textContainer {
+        width: 100%;
+        text-align: center;
+        margin-top: 32px;
+
+        .step {
+          font-size: $steps-section-step-mobile-font-size;
+          font-weight: $steps-section-step-mobile-font-weight;
+          line-height: $steps-section-step-mobile-line-height;
+        }
+
+        .title {
+          font-size: $steps-section-title-mobile-font-size;
+          font-weight: $steps-section-title-mobile-font-weight;
+          line-height: $steps-section-title-mobile-line-height;
+        }
+
+        .text {
+          font-size: $steps-section-text-mobile-font-size;
+          font-weight: $steps-section-text-mobile-font-weight;
+          line-height: $steps-section-text-mobile-line-height;
+        }
+      }
+    }
+  }
+}
+
+@include respond-to(md) {
+  .card {
+    width: 100%;
+    height: 100%;
+  }
 }

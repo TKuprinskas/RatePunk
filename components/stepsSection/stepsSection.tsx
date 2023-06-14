@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './stepsSection.module.scss';
 import Image from 'next/image';
 
@@ -24,24 +24,39 @@ const steps = [
 ];
 
 const StepsSection = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.innerWidth < 768) {
+      setIsMobile(true);
+    }
+  }, []);
+
   return (
     <div className={styles.card}>
       {steps.map((step, index) => (
         <div className={styles.box} key={index}>
-          {index % 2 === 0 && (
+          {!isMobile && index % 2 === 0 ? (
             <Image
               src={step.image}
               alt={`${step.title} icon`}
               width={128}
               height={140}
             />
-          )}
+          ) : isMobile ? (
+            <Image
+              src={step.image}
+              alt={`${step.title} icon`}
+              width={128}
+              height={140}
+            />
+          ) : null}
           <div className={styles.textContainer}>
             <div className={styles.step}>{step.step}</div>
             <div className={styles.title}>{step.title}</div>
             <div className={styles.text}>{step.text}</div>
           </div>
-          {index % 2 !== 0 && (
+          {!isMobile && index % 2 !== 0 && (
             <Image
               src={step.image}
               alt={`${step.title} icon`}

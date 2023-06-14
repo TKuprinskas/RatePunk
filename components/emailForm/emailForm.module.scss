@@ -18,6 +18,7 @@
     line-height: $form-title-line-height;
     color: $main-text-color;
     text-transform: uppercase;
+    margin-bottom: 32px;
   }
 
   .textContainer {
@@ -69,5 +70,60 @@
     font-size: $form-footer-text-font-size;
     font-weight: $form-footer-text-font-weight;
     line-height: $form-footer-text-line-height;
+  }
+
+  @include respond-to(md) {
+    .title {
+      font-size: $form-title-mobile-font-size;
+      font-weight: $form-title-mobile-font-weight;
+      line-height: $form-title-mobile-line-height;
+      margin-bottom: 24px;
+    }
+
+    .textContainer {
+      margin-bottom: 24px;
+      p {
+        font-size: $form-text-mobile-font-size;
+        font-weight: $form-text-mobile-font-weight;
+        line-height: $form-text-mobile-line-height;
+      }
+    }
+
+    .inputContainer {
+      margin-bottom: 16px;
+      input {
+        width: 100%;
+        height: 56px;
+        &::placeholder {
+          font-size: $form-input-placeholder-mobile-font-size;
+          font-weight: $form-input-placeholder-mobile-font-weight;
+          line-height: $form-input-placeholder-mobile-line-height;
+        }
+      }
+    }
+
+    .button {
+      width: 100%;
+      height: 56px;
+      font-size: $form-submit-button-text-mobile-font-size;
+      font-weight: $form-submit-button-text-mobile-font-weight;
+      line-height: $form-submit-button-text-mobile-line-height;
+      margin-bottom: 71px;
+    }
+
+    .footer {
+      font-size: $form-footer-text-mobile-font-size;
+      font-weight: $form-footer-text-mobile-font-weight;
+      line-height: $form-footer-text-mobile-line-height;
+    }
+  }
+}
+
+@include respond-to(md) {
+  .card {
+    width: 100%;
+    height: 100%;
+    padding: 32px 16px;
+    margin-bottom: 50px;
   }
 }
